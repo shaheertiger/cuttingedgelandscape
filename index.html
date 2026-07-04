@@ -986,11 +986,12 @@
                     whileInView="show"
                     viewport={{ once: true, margin: "50px" }}
                 >
-                    <img 
-                        src={item.src} 
-                        alt="Landscaping project" 
-                        loading="lazy" 
-                        style={{ '--base-scale': item.scale || 1 }} 
+                    <img
+                        src={item.src}
+                        alt={item.desc || 'Landscaping project by Cutting Edge Landscaping'}
+                        loading="lazy"
+                        style={{ '--base-scale': item.scale || 1 }}
+                        onError={(e) => { const card = e.target.closest('.gallery-item'); if (card) card.style.display = 'none'; }}
                     />
                     <div className="gallery-overlay">
                         <p>{item.desc}</p>
