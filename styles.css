@@ -107,13 +107,13 @@ h1, h2, h3, h4 { font-weight: 900; line-height: 1.2; color: var(--secondary-navy
     font-size: 11px;
     padding: 2px 8px;
     border-radius: 50px;
-    align-self: flex-start;
+    align-self: center;
     margin: 2px 0;
     letter-spacing: 1.5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 .brand-title-bottom { font-size: 19px; letter-spacing: 1.5px; }
-.brand-est { font-size: 11px; letter-spacing: 4px; text-align: left; margin-top: 2px; }
+.brand-est { font-size: 11px; letter-spacing: 4px; text-align: center; margin-top: 2px; }
 
 @media (max-width: 768px) {
     .nav-container { height: 75px; }
