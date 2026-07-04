@@ -107,8 +107,8 @@ function Header() {
   }, "Services")), React.createElement("li", null, React.createElement("a", {
     href: "#gallery"
   }, "Gallery")), React.createElement("li", null, React.createElement("a", {
-    href: "#partners"
-  }, "Partners")), React.createElement("li", null, React.createElement("a", {
+    href: "#products"
+  }, "Products")), React.createElement("li", null, React.createElement("a", {
     href: "#areas"
   }, "Areas")), React.createElement("li", null, React.createElement(motion.a, {
     href: "#contact",
@@ -157,9 +157,9 @@ function Header() {
     href: "#gallery",
     onClick: () => setIsMenuOpen(false)
   }, "Gallery")), React.createElement("li", null, React.createElement("a", {
-    href: "#partners",
+    href: "#products",
     onClick: () => setIsMenuOpen(false)
-  }, "Partners")), React.createElement("li", null, React.createElement("a", {
+  }, "Products")), React.createElement("li", null, React.createElement("a", {
     href: "#areas",
     onClick: () => setIsMenuOpen(false)
   }, "Areas")), React.createElement("li", null, React.createElement("a", {
@@ -752,13 +752,13 @@ function Services() {
     }
   })))))));
 }
-function Partners() {
+function Products() {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
     margin: "-50px"
   });
-  const partners = [{
+  const products = [{
     name: 'Rymar Grass',
     image: 'assets/raymar grass.png'
   }, {
@@ -787,7 +787,7 @@ function Partners() {
     image: 'assets/unilock.png'
   }];
   return React.createElement("section", {
-    id: "partners",
+    id: "products",
     className: "section",
     ref: ref
   }, React.createElement("div", {
@@ -819,14 +819,14 @@ function Partners() {
     transition: {
       delay: 0.2
     }
-  }, "Our Trusted Partners"), React.createElement(motion.div, {
-    className: "partners-grid",
+  }, "Our Trusted Products"), React.createElement(motion.div, {
+    className: "products-grid",
     variants: containerVariants,
     initial: "hidden",
     animate: isInView ? "show" : "hidden"
-  }, partners.map((p, i) => React.createElement(motion.div, {
+  }, products.map((p, i) => React.createElement(motion.div, {
     key: i,
-    className: "partner-card",
+    className: "product-card",
     variants: itemVariants,
     whileHover: {
       scale: 1.05,
@@ -836,7 +836,7 @@ function Partners() {
   }, React.createElement("img", {
     src: p.image,
     alt: p.name,
-    className: "partner-logo",
+    className: "product-logo",
     style: {
       transform: `scale(${p.scale || 1.8})`
     },
@@ -845,7 +845,7 @@ function Partners() {
       e.target.nextSibling.style.display = 'block';
     }
   }), React.createElement("span", {
-    className: "partner-name",
+    className: "product-name",
     style: {
       display: 'none'
     }
@@ -894,7 +894,7 @@ function AchievementCard({
       transform: 'rotate(-25deg)',
       zIndex: 2
     }
-  }, "👑"), React.createElement("div", {
+  }, "\uD83D\uDC51"), React.createElement("div", {
     style: {
       background: '#3ba4eb',
       color: 'white',
@@ -954,7 +954,7 @@ function AchievementCard({
       transform: 'rotate(-25deg)',
       zIndex: 2
     }
-  }, "👑"), React.createElement("div", {
+  }, "\uD83D\uDC51"), React.createElement("div", {
     style: {
       background: '#3ba4eb',
       width: '90px',
@@ -979,7 +979,7 @@ function AchievementCard({
       marginTop: '20px',
       fontWeight: 'bold'
     }
-  }, "✓")), React.createElement("div", {
+  }, "\u2713")), React.createElement("div", {
     style: {
       position: 'absolute',
       top: '40px',
@@ -1134,9 +1134,9 @@ function Reviews() {
     variants: itemVariants
   }, React.createElement("div", {
     className: "review-quote-icon"
-  }, "“"), React.createElement("div", {
+  }, "\u201C"), React.createElement("div", {
     className: "review-stars"
-  }, "★★★★★"), React.createElement("p", {
+  }, "\u2605\u2605\u2605\u2605\u2605"), React.createElement("p", {
     className: "review-text"
   }, "\"", r.text, "\""), React.createElement("div", {
     className: "review-footer"
@@ -1576,7 +1576,7 @@ function AboutUs() {
       duration: 0.8,
       delay: 0.2
     }
-  }, React.createElement("p", null, "Cutting Edge Landscaping & Snowplowing has been creating stunning landscapes surrounding Toronto, Ontario, since 2004. We combine our talent and expertise with our clients' visions and concepts — creating beautiful outdoor living areas for many years."), React.createElement("p", null, "We are involved in numerous skillful associations to be acknowledged as an industry leader. We are proud of our dedication to controlling budgetary constraints and timelines and the transparency we communicate with our clients and consultants."), React.createElement("p", null, "Interlocking stone and flagstone natural stone are among our specializations — excellent choices for pathways, driveways, and patios, adding elegance and durability to your landscape.")), React.createElement(motion.div, {
+  }, React.createElement("p", null, "Cutting Edge Landscaping & Snowplowing has been creating stunning landscapes surrounding Toronto, Ontario, since 2004. We combine our talent and expertise with our clients' visions and concepts \u2014 creating beautiful outdoor living areas for many years."), React.createElement("p", null, "We are involved in numerous skillful associations to be acknowledged as an industry leader. We are proud of our dedication to controlling budgetary constraints and timelines and the transparency we communicate with our clients and consultants."), React.createElement("p", null, "Interlocking stone and flagstone natural stone are among our specializations \u2014 excellent choices for pathways, driveways, and patios, adding elegance and durability to your landscape.")), React.createElement(motion.div, {
     className: "about-highlight-box",
     initial: {
       opacity: 0,
@@ -1741,7 +1741,7 @@ function AreasServed() {
     transition: {
       delay: 0.3
     }
-  }, "Based in Etobicoke, Cutting Edge Landscaping & Snowplowing serves homes and businesses across the Greater Toronto Area — every community within roughly a 30\xA0km radius, from Oakville to Markham and Caledon down to the Toronto lakeshore."), React.createElement(motion.div, {
+  }, "Based in Etobicoke, Cutting Edge Landscaping & Snowplowing serves homes and businesses across the Greater Toronto Area \u2014 every community within roughly a 30\xA0km radius, from Oakville to Markham and Caledon down to the Toronto lakeshore."), React.createElement(motion.div, {
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
@@ -1798,7 +1798,7 @@ function AreasServed() {
   })))))));
 }
 function App() {
-  return React.createElement("div", null, React.createElement(Header, null), React.createElement(Hero, null), React.createElement(TrustBanner, null), React.createElement(TrustVideo, null), React.createElement(Services, null), React.createElement(Process, null), React.createElement(Gallery, null), React.createElement(Achievements, null), React.createElement(Partners, null), React.createElement(Reviews, null), React.createElement(AboutUs, null), React.createElement(AreasServed, null), React.createElement(Contact, null), React.createElement("footer", {
+  return React.createElement("div", null, React.createElement(Header, null), React.createElement(Hero, null), React.createElement(TrustBanner, null), React.createElement(TrustVideo, null), React.createElement(Services, null), React.createElement(Process, null), React.createElement(Gallery, null), React.createElement(Achievements, null), React.createElement(Products, null), React.createElement(Reviews, null), React.createElement(AboutUs, null), React.createElement(AreasServed, null), React.createElement(Contact, null), React.createElement("footer", {
     className: "bg-navy text-white",
     style: {
       padding: '3rem 0',
@@ -1817,7 +1817,7 @@ function App() {
       marginTop: '2rem',
       color: '#a0aab5'
     }
-  }, "© 2004 - 2026 Cutting Edge Landscaping & Snowplowing"))));
+  }, "\xA9 2004 - 2026 Cutting Edge Landscaping & Snowplowing"))));
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(App, null));

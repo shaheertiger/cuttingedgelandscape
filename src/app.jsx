@@ -60,7 +60,7 @@
                                     <li><a href="#about">About Us</a></li>
                                     <li><a href="#services">Services</a></li>
                                     <li><a href="#gallery">Gallery</a></li>
-                                    <li><a href="#partners">Partners</a></li>
+                                    <li><a href="#products">Products</a></li>
                                     <li><a href="#areas">Areas</a></li>
                                     <li><motion.a href="#contact" className="nav-cta" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Get a Free Quote</motion.a></li>
                                 </ul>
@@ -84,7 +84,7 @@
                                         <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About Us</a></li>
                                         <li><a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a></li>
                                         <li><a href="#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</a></li>
-                                        <li><a href="#partners" onClick={() => setIsMenuOpen(false)}>Partners</a></li>
+                                        <li><a href="#products" onClick={() => setIsMenuOpen(false)}>Products</a></li>
                                         <li><a href="#areas" onClick={() => setIsMenuOpen(false)}>Areas</a></li>
                                         <li><a href="#contact" className="nav-cta" onClick={() => setIsMenuOpen(false)}>Get a Free Quote</a></li>
                                     </ul>
@@ -383,10 +383,10 @@
             );
         }
 
-        function Partners() {
+        function Products() {
             const ref = useRef(null);
             const isInView = useInView(ref, { once: true, margin: "-50px" });
-            const partners = [
+            const products = [
                 { name: 'Rymar Grass', image: 'assets/raymar grass.png' },
                 { name: 'Best Way Stone', image: 'assets/bestwaystones.png' },
                 { name: 'Permacon', image: 'assets/permacon.png' },
@@ -399,7 +399,7 @@
             ];
 
             return (
-                <section id="partners" className="section" ref={ref}>
+                <section id="products" className="section" ref={ref}>
                     <div className="container text-center">
                         <motion.div 
                             className="accent-text text-center"
@@ -415,19 +415,19 @@
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 0.2 }}
                         >
-                            Our Trusted Partners
+                            Our Trusted Products
                         </motion.h2>
                         
                         <motion.div 
-                            className="partners-grid"
+                            className="products-grid"
                             variants={containerVariants}
                             initial="hidden"
                             animate={isInView ? "show" : "hidden"}
                         >
-                            {partners.map((p, i) => (
-                                <motion.div 
-                                    key={i} 
-                                    className="partner-card"
+                            {products.map((p, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="product-card"
                                     variants={itemVariants}
                                     whileHover={{ 
                                         scale: 1.05, 
@@ -438,14 +438,14 @@
                                     <img 
                                         src={p.image} 
                                         alt={p.name} 
-                                        className="partner-logo"
+                                        className="product-logo"
                                         style={{ transform: `scale(${p.scale || 1.8})` }}
                                         onError={(e) => {
                                             e.target.style.display = 'none';
                                             e.target.nextSibling.style.display = 'block';
                                         }}
                                     />
-                                    <span className="partner-name" style={{ display: 'none' }}>{p.name}</span>
+                                    <span className="product-name" style={{ display: 'none' }}>{p.name}</span>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -1024,7 +1024,7 @@
                     <Process />
                     <Gallery />
                     <Achievements />
-                    <Partners />
+                    <Products />
                     <Reviews />
                     <AboutUs />
                     <AreasServed />
