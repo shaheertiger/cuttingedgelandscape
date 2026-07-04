@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "echo 'Static site — assets/app.js is prebuilt and committed; no build needed.'",
+  "outputDirectory": "."
+}
