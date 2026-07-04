@@ -1,0 +1,16 @@
+{
+  "name": "Cutting Edge Landscaping & Snowplowing",
+  "short_name": "Cutting Edge",
+  "description": "Award-winning landscaping, hardscaping and snow removal in Toronto and the GTA since 2004.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e2030",
+  "theme_color": "#1f4228",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
