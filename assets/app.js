@@ -108,7 +108,9 @@ function Header() {
     href: "#gallery"
   }, "Gallery")), React.createElement("li", null, React.createElement("a", {
     href: "#partners"
-  }, "Partners")), React.createElement("li", null, React.createElement(motion.a, {
+  }, "Partners")), React.createElement("li", null, React.createElement("a", {
+    href: "#areas"
+  }, "Areas")), React.createElement("li", null, React.createElement(motion.a, {
     href: "#contact",
     className: "nav-cta",
     whileHover: {
@@ -158,6 +160,9 @@ function Header() {
     href: "#partners",
     onClick: () => setIsMenuOpen(false)
   }, "Partners")), React.createElement("li", null, React.createElement("a", {
+    href: "#areas",
+    onClick: () => setIsMenuOpen(false)
+  }, "Areas")), React.createElement("li", null, React.createElement("a", {
     href: "#contact",
     className: "nav-cta",
     onClick: () => setIsMenuOpen(false)
@@ -1653,8 +1658,122 @@ function AboutUs() {
     className: "badge-specialty-title"
   }, "Hardscaping"))))));
 }
+function AreasServed() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-50px"
+  });
+  const regions = [{
+    area: 'Toronto & Etobicoke',
+    places: ['Etobicoke', 'Rexdale', 'Islington', 'The Kingsway', 'Mimico', 'New Toronto', 'Long Branch', 'Alderwood', 'Humber Bay', 'Toronto', 'North York', 'York', 'East York', 'Weston', 'Downsview', 'Scarborough']
+  }, {
+    area: 'Peel Region',
+    places: ['Mississauga', 'Brampton', 'Port Credit', 'Streetsville', 'Clarkson', 'Meadowvale', 'Malton', 'Bramalea', 'Caledon', 'Bolton']
+  }, {
+    area: 'York Region',
+    places: ['Vaughan', 'Woodbridge', 'Kleinburg', 'Maple', 'Concord', 'Thornhill', 'Richmond Hill', 'King City', 'Markham']
+  }, {
+    area: 'Halton Region',
+    places: ['Oakville', 'Milton', 'Georgetown']
+  }];
+  return React.createElement("section", {
+    id: "areas",
+    className: "section bg-light",
+    ref: ref
+  }, React.createElement("div", {
+    className: "container text-center"
+  }, React.createElement(motion.div, {
+    className: "accent-text",
+    initial: {
+      opacity: 0,
+      scale: 0.5
+    },
+    animate: isInView ? {
+      opacity: 1,
+      scale: 1
+    } : {},
+    transition: {
+      duration: 0.8,
+      type: "spring"
+    }
+  }, "Serving the GTA"), React.createElement(motion.h2, {
+    className: "section-title text-center",
+    initial: {
+      opacity: 0,
+      y: 20
+    },
+    animate: isInView ? {
+      opacity: 1,
+      y: 0
+    } : {},
+    transition: {
+      delay: 0.2
+    }
+  }, "Areas We Serve"), React.createElement(motion.p, {
+    style: {
+      maxWidth: '760px',
+      margin: '0 auto 3rem',
+      color: 'var(--text-light)',
+      fontSize: '1.05rem',
+      lineHeight: 1.7
+    },
+    initial: {
+      opacity: 0
+    },
+    animate: isInView ? {
+      opacity: 1
+    } : {},
+    transition: {
+      delay: 0.3
+    }
+  }, "Based in Etobicoke, Cutting Edge Landscaping & Snowplowing serves homes and businesses across the Greater Toronto Area — every community within roughly a 30\xA0km radius, from Oakville to Markham and Caledon down to the Toronto lakeshore."), React.createElement(motion.div, {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+      gap: '1.5rem',
+      textAlign: 'left'
+    },
+    variants: containerVariants,
+    initial: "hidden",
+    animate: isInView ? "show" : "hidden"
+  }, regions.map((r, i) => React.createElement(motion.div, {
+    key: i,
+    variants: itemVariants,
+    style: {
+      background: 'white',
+      borderRadius: '16px',
+      padding: '1.75rem',
+      boxShadow: 'var(--shadow)',
+      borderTop: '4px solid var(--primary-green)'
+    }
+  }, React.createElement("h3", {
+    style: {
+      fontSize: '1.15rem',
+      color: 'var(--secondary-navy)',
+      marginBottom: '1rem',
+      fontWeight: 800
+    }
+  }, r.area), React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: '0.5rem'
+    }
+  }, r.places.map((p, j) => React.createElement("span", {
+    key: j,
+    style: {
+      background: 'var(--bg-light)',
+      color: 'var(--text-dark)',
+      padding: '5px 12px',
+      borderRadius: '50px',
+      fontSize: '0.85rem',
+      fontWeight: 600
+    }
+  }, p))))))));
+}
 function App() {
-  return React.createElement("div", null, React.createElement(Header, null), React.createElement(Hero, null), React.createElement(TrustBanner, null), React.createElement(TrustVideo, null), React.createElement(Services, null), React.createElement(Process, null), React.createElement(Gallery, null), React.createElement(Achievements, null), React.createElement(Partners, null), React.createElement(Reviews, null), React.createElement(AboutUs, null), React.createElement(Contact, null), React.createElement("footer", {
+  return React.createElement("div", null, React.createElement(Header, null), React.createElement(Hero, null), React.createElement(TrustBanner, null), React.createElement(TrustVideo, null), React.createElement(Services, null), React.createElement(Process, null), React.createElement(Gallery, null), React.createElement(Achievements, null), React.createElement(Partners, null), React.createElement(Reviews, null), React.createElement(AboutUs, null), React.createElement(AreasServed, null), React.createElement(Contact, null), React.createElement("footer", {
     className: "bg-navy text-white",
     style: {
       padding: '3rem 0',
