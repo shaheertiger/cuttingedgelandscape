@@ -179,7 +179,7 @@
                                 <h3>Request a Free Quote</h3>
                                 <form action="https://formsubmit.co/kyle_cuttingedge@hotmail.com" method="POST">
                                     <input type="hidden" name="_subject" value="New Quote Request - Cutting Edge Landscaping" />
-                                    <input type="hidden" name="_next" value="https://cuttingedge2.vercel.app/?submitted=true" />
+                                    <input type="hidden" name="_next" value="https://cutting-edge-landscaping.ca/?submitted=true" />
                                     <input type="hidden" name="_captcha" value="false" />
                                     <div className="form-group" style={{ position: 'relative' }}>
                                         <input type="text" name="name" className="form-input" placeholder="Full Name" required />

@@ -331,7 +331,7 @@ function Hero() {
   }), React.createElement("input", {
     type: "hidden",
     name: "_next",
-    value: "https://cuttingedge2.vercel.app/?submitted=true"
+    value: "https://cutting-edge-landscaping.ca/?submitted=true"
   }), React.createElement("input", {
     type: "hidden",
     name: "_captcha",

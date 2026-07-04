@@ -1,5 +1,5 @@
 # robots.txt for Cutting Edge Landscaping & Snowplowing
-# https://cuttingedge2.vercel.app/
+# https://cutting-edge-landscaping.ca/
 
 # Allow all standard search engine crawlers
 User-agent: *
@@ -57,4 +57,4 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-Sitemap: https://cuttingedge2.vercel.app/sitemap.xml
+Sitemap: https://cutting-edge-landscaping.ca/sitemap.xml
