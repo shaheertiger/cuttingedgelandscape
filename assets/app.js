@@ -1677,6 +1677,20 @@ function AreasServed() {
     area: 'Halton Region',
     places: ['Oakville', 'Milton', 'Georgetown']
   }];
+  const pageLinks = {
+    'Etobicoke': 'etobicoke',
+    'Toronto': 'toronto',
+    'North York': 'north-york',
+    'Mississauga': 'mississauga',
+    'Brampton': 'brampton',
+    'Caledon': 'caledon',
+    'Vaughan': 'vaughan',
+    'Woodbridge': 'woodbridge',
+    'Richmond Hill': 'richmond-hill',
+    'Markham': 'markham',
+    'Oakville': 'oakville',
+    'Milton': 'milton'
+  };
   return React.createElement("section", {
     id: "areas",
     className: "section bg-light",
@@ -1760,17 +1774,28 @@ function AreasServed() {
       flexWrap: 'wrap',
       gap: '0.5rem'
     }
-  }, r.places.map((p, j) => React.createElement("span", {
-    key: j,
-    style: {
+  }, r.places.map((p, j) => {
+    const slug = pageLinks[p];
+    const chipStyle = {
       background: 'var(--bg-light)',
-      color: 'var(--text-dark)',
+      color: slug ? 'var(--primary-green)' : 'var(--text-dark)',
       padding: '5px 12px',
       borderRadius: '50px',
       fontSize: '0.85rem',
-      fontWeight: 600
-    }
-  }, p))))))));
+      fontWeight: slug ? 700 : 600,
+      textDecoration: 'none',
+      display: 'inline-block'
+    };
+    return slug ? React.createElement("a", {
+      key: j,
+      href: `/areas/${slug}`,
+      style: chipStyle,
+      title: `Landscaping in ${p}`
+    }, p) : React.createElement("span", {
+      key: j,
+      style: chipStyle
+    }, p);
+  })))))));
 }
 function App() {
   return React.createElement("div", null, React.createElement(Header, null), React.createElement(Hero, null), React.createElement(TrustBanner, null), React.createElement(TrustVideo, null), React.createElement(Services, null), React.createElement(Process, null), React.createElement(Gallery, null), React.createElement(Achievements, null), React.createElement(Partners, null), React.createElement(Reviews, null), React.createElement(AboutUs, null), React.createElement(AreasServed, null), React.createElement(Contact, null), React.createElement("footer", {

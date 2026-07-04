@@ -949,6 +949,13 @@
                 { area: 'Halton Region', places: ['Oakville', 'Milton', 'Georgetown'] }
             ];
 
+            const pageLinks = {
+                'Etobicoke': 'etobicoke', 'Toronto': 'toronto', 'North York': 'north-york',
+                'Mississauga': 'mississauga', 'Brampton': 'brampton', 'Caledon': 'caledon',
+                'Vaughan': 'vaughan', 'Woodbridge': 'woodbridge', 'Richmond Hill': 'richmond-hill',
+                'Markham': 'markham', 'Oakville': 'oakville', 'Milton': 'milton'
+            };
+
             return (
                 <section id="areas" className="section bg-light" ref={ref}>
                     <div className="container text-center">
@@ -990,9 +997,13 @@
                                 >
                                     <h3 style={{ fontSize: '1.15rem', color: 'var(--secondary-navy)', marginBottom: '1rem', fontWeight: 800 }}>{r.area}</h3>
                                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                                        {r.places.map((p, j) => (
-                                            <span key={j} style={{ background: 'var(--bg-light)', color: 'var(--text-dark)', padding: '5px 12px', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600 }}>{p}</span>
-                                        ))}
+                                        {r.places.map((p, j) => {
+                                            const slug = pageLinks[p];
+                                            const chipStyle = { background: 'var(--bg-light)', color: slug ? 'var(--primary-green)' : 'var(--text-dark)', padding: '5px 12px', borderRadius: '50px', fontSize: '0.85rem', fontWeight: slug ? 700 : 600, textDecoration: 'none', display: 'inline-block' };
+                                            return slug
+                                                ? <a key={j} href={`/areas/${slug}`} style={chipStyle} title={`Landscaping in ${p}`}>{p}</a>
+                                                : <span key={j} style={chipStyle}>{p}</span>;
+                                        })}
                                     </div>
                                 </motion.div>
                             ))}
