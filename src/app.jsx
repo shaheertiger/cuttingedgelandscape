@@ -61,6 +61,7 @@
                                     <li><a href="#services">Services</a></li>
                                     <li><a href="#gallery">Gallery</a></li>
                                     <li><a href="#partners">Partners</a></li>
+                                    <li><a href="#areas">Areas</a></li>
                                     <li><motion.a href="#contact" className="nav-cta" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Get a Free Quote</motion.a></li>
                                 </ul>
                             </nav>
@@ -84,6 +85,7 @@
                                         <li><a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a></li>
                                         <li><a href="#gallery" onClick={() => setIsMenuOpen(false)}>Gallery</a></li>
                                         <li><a href="#partners" onClick={() => setIsMenuOpen(false)}>Partners</a></li>
+                                        <li><a href="#areas" onClick={() => setIsMenuOpen(false)}>Areas</a></li>
                                         <li><a href="#contact" className="nav-cta" onClick={() => setIsMenuOpen(false)}>Get a Free Quote</a></li>
                                     </ul>
                                 </motion.div>
@@ -936,6 +938,70 @@
             );
         }
 
+        function AreasServed() {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+            const regions = [
+                { area: 'Toronto & Etobicoke', places: ['Etobicoke', 'Rexdale', 'Islington', 'The Kingsway', 'Mimico', 'New Toronto', 'Long Branch', 'Alderwood', 'Humber Bay', 'Toronto', 'North York', 'York', 'East York', 'Weston', 'Downsview', 'Scarborough'] },
+                { area: 'Peel Region', places: ['Mississauga', 'Brampton', 'Port Credit', 'Streetsville', 'Clarkson', 'Meadowvale', 'Malton', 'Bramalea', 'Caledon', 'Bolton'] },
+                { area: 'York Region', places: ['Vaughan', 'Woodbridge', 'Kleinburg', 'Maple', 'Concord', 'Thornhill', 'Richmond Hill', 'King City', 'Markham'] },
+                { area: 'Halton Region', places: ['Oakville', 'Milton', 'Georgetown'] }
+            ];
+
+            return (
+                <section id="areas" className="section bg-light" ref={ref}>
+                    <div className="container text-center">
+                        <motion.div
+                            className="accent-text"
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                            transition={{ duration: 0.8, type: "spring" }}
+                        >
+                            Serving the GTA
+                        </motion.div>
+                        <motion.h2
+                            className="section-title text-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: 0.2 }}
+                        >
+                            Areas We Serve
+                        </motion.h2>
+                        <motion.p
+                            style={{ maxWidth: '760px', margin: '0 auto 3rem', color: 'var(--text-light)', fontSize: '1.05rem', lineHeight: 1.7 }}
+                            initial={{ opacity: 0 }}
+                            animate={isInView ? { opacity: 1 } : {}}
+                            transition={{ delay: 0.3 }}
+                        >
+                            Based in Etobicoke, Cutting Edge Landscaping &amp; Snowplowing serves homes and businesses across the Greater Toronto Area — every community within roughly a 30&nbsp;km radius, from Oakville to Markham and Caledon down to the Toronto lakeshore.
+                        </motion.p>
+                        <motion.div
+                            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem', textAlign: 'left' }}
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate={isInView ? "show" : "hidden"}
+                        >
+                            {regions.map((r, i) => (
+                                <motion.div
+                                    key={i}
+                                    variants={itemVariants}
+                                    style={{ background: 'white', borderRadius: '16px', padding: '1.75rem', boxShadow: 'var(--shadow)', borderTop: '4px solid var(--primary-green)' }}
+                                >
+                                    <h3 style={{ fontSize: '1.15rem', color: 'var(--secondary-navy)', marginBottom: '1rem', fontWeight: 800 }}>{r.area}</h3>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                                        {r.places.map((p, j) => (
+                                            <span key={j} style={{ background: 'var(--bg-light)', color: 'var(--text-dark)', padding: '5px 12px', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600 }}>{p}</span>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </section>
+            );
+        }
+
         function App() {
             return (
                 <div>
@@ -950,6 +1016,7 @@
                     <Partners />
                     <Reviews />
                     <AboutUs />
+                    <AreasServed />
                     <Contact />
                     <footer className="bg-navy text-white" style={{ padding: '3rem 0', textAlign: 'center' }}>
                         <div className="container">
