@@ -4,7 +4,9 @@
   "private": true,
   "description": "Marketing site for Cutting Edge Landscaping & Snowplowing (static, no runtime build).",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js && node scripts/build-areas.js",
+    "build:app": "node build.js",
+    "build:areas": "node scripts/build-areas.js"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
