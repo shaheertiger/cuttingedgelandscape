@@ -691,7 +691,6 @@
                                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)", borderColor: "#d4af37" }}
                                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                             >
-                                <div style={{ fontSize: '1.2rem', fontWeight: 800, color: '#d4af37', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '8px' }}>Visit Us Here</div>
                                 <span>66 Genthorn Ave, Etobicoke, ON M9W 2S9</span>
                             </motion.a>
                         </motion.div>
