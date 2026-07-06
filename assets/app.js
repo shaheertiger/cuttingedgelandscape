@@ -1260,16 +1260,7 @@ function Contact() {
       flexDirection: 'column',
       alignItems: 'center'
     }
-  }, React.createElement("div", {
-    style: {
-      fontSize: '1.2rem',
-      fontWeight: 800,
-      color: '#d4af37',
-      textTransform: 'uppercase',
-      letterSpacing: '1.5px',
-      marginBottom: '8px'
-    }
-  }, "Visit Us Here"), React.createElement("span", null, "66 Genthorn Ave, Etobicoke, ON M9W 2S9")))));
+  }, React.createElement("span", null, "66 Genthorn Ave, Etobicoke, ON M9W 2S9")))));
 }
 function GalleryItemComponent({
   item
