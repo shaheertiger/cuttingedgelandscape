@@ -648,6 +648,7 @@ function Services() {
     icon: svgs.flagstone
   }, {
     title: 'Retaining Walls',
+    href: '/services/retaining-walls-etobicoke-toronto',
     image: 'assets/retaining walls.jpeg',
     objectPosition: 'center',
     icon: svgs.wall
@@ -678,16 +679,19 @@ function Services() {
     icon: svgs.pool
   }, {
     title: 'Snow Removal',
+    href: '/services/snow-removal-etobicoke-toronto',
     image: 'assets/snow removal.jpeg',
     objectPosition: 'center',
     icon: svgs.snow
   }, {
     title: 'Interlocking Stone',
+    href: '/services/interlocking-etobicoke-toronto',
     image: 'assets/interlockingstone.jpeg',
     objectPosition: 'center',
     icon: svgs.interlock
   }, {
     title: 'Sodding',
+    href: '/services/sod-installation-etobicoke-toronto',
     image: 'assets/sodding.jpeg',
     objectPosition: 'center',
     icon: svgs.sodding
@@ -741,7 +745,13 @@ function Services() {
     className: "service-icon-primary"
   }, s.icon), React.createElement("h3", {
     className: "service-title"
-  }, s.title)), React.createElement("div", {
+  }, s.href ? React.createElement("a", {
+    href: s.href,
+    style: {
+      color: 'inherit',
+      textDecoration: 'none'
+    }
+  }, s.title) : s.title)), React.createElement("div", {
     className: "service-img-wrapper"
   }, React.createElement("img", {
     src: s.image,
