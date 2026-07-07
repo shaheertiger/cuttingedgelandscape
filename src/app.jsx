@@ -330,15 +330,15 @@
 
             const services = [
                 { title: 'Flagstone Natural Stone', image: 'assets/flagstone natural stone.jpeg', objectPosition: 'center 35%', icon: svgs.flagstone },
-                { title: 'Retaining Walls', image: 'assets/retaining walls.jpeg', objectPosition: 'center', icon: svgs.wall },
+                { title: 'Retaining Walls', href: '/services/retaining-walls-etobicoke-toronto', image: 'assets/retaining walls.jpeg', objectPosition: 'center', icon: svgs.wall },
                 { title: 'Hot Tubs', image: 'assets/hottubs.jpeg', objectPosition: 'center', icon: svgs.spa },
                 { title: 'Composite Decking', image: 'assets/deckfrances.jpeg', objectPosition: 'center', icon: svgs.fence },
                 { title: 'Artificial Turf', image: 'assets/artificalterf.jpeg', objectPosition: 'center', icon: svgs.turf },
                 { title: 'Property Maintenance', image: 'assets/property maintainance.jpeg', objectPosition: 'center', icon: svgs.house },
                 { title: 'Pools', image: 'assets/pond.jpeg', objectPosition: 'center', icon: svgs.pool },
-                { title: 'Snow Removal', image: 'assets/snow removal.jpeg', objectPosition: 'center', icon: svgs.snow },
-                { title: 'Interlocking Stone', image: 'assets/interlockingstone.jpeg', objectPosition: 'center', icon: svgs.interlock },
-                { title: 'Sodding', image: 'assets/sodding.jpeg', objectPosition: 'center', icon: svgs.sodding }
+                { title: 'Snow Removal', href: '/services/snow-removal-etobicoke-toronto', image: 'assets/snow removal.jpeg', objectPosition: 'center', icon: svgs.snow },
+                { title: 'Interlocking Stone', href: '/services/interlocking-etobicoke-toronto', image: 'assets/interlockingstone.jpeg', objectPosition: 'center', icon: svgs.interlock },
+                { title: 'Sodding', href: '/services/sod-installation-etobicoke-toronto', image: 'assets/sodding.jpeg', objectPosition: 'center', icon: svgs.sodding }
             ];
 
             return (
@@ -370,7 +370,7 @@
                                 >
                                     <div className="service-card-top">
                                         <div className="service-icon-primary">{s.icon}</div>
-                                        <h3 className="service-title">{s.title}</h3>
+                                        <h3 className="service-title">{s.href ? <a href={s.href} style={{ color: 'inherit', textDecoration: 'none' }}>{s.title}</a> : s.title}</h3>
                                     </div>
                                     <div className="service-img-wrapper">
                                         <img src={s.image} alt={s.title} className="service-image" style={{ objectPosition: s.objectPosition || 'center' }} />
